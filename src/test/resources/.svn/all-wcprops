@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/!svn/ver/161/trunk/Projet/src/test/resources
+END
+TestsBanqueManager-context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/!svn/ver/161/trunk/Projet/src/test/resources/TestsBanqueManager-context.xml
+END
+TestsDaoHibernate-context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/!svn/ver/161/trunk/Projet/src/test/resources/TestsDaoHibernate-context.xml
+END

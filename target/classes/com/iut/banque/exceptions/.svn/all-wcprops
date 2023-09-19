@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/!svn/ver/165/trunk/Projet/src/main/java/com/iut/banque/exceptions
+END
+IllegalOperationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/!svn/ver/161/trunk/Projet/src/main/java/com/iut/banque/exceptions/IllegalOperationException.java
+END
+InsufficientFundsException.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/!svn/ver/161/trunk/Projet/src/main/java/com/iut/banque/exceptions/InsufficientFundsException.java
+END
+IllegalFormatException.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/!svn/ver/165/trunk/Projet/src/main/java/com/iut/banque/exceptions/IllegalFormatException.java
+END
+TechnicalException.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/!svn/ver/161/trunk/Projet/src/main/java/com/iut/banque/exceptions/TechnicalException.java
+END
