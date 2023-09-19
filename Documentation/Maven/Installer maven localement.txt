@@ -1,0 +1,10 @@
+-!!! Si un JDK java n'a pas été installer, veuillez télécharger un sur le lien suivant: https://www.oracle.com/fr/java/technologies/downloads/#jdk20-windows
+
+-Telecharger le build "Binary zip archive": https://maven.apache.org/download.cgi
+-Extraire l'archive n'importe ou
+-Acceder aux variables d'environnement (taper "variable d'environnement" sur la barre de recherche)
+-Appuyer sur le bouton "Variables d'environnment" en bas
+-Cliquer sur la variable "Path" (dans la fenetre variables système) puis cliquer sur le bouton "modifier"
+-Appuyer sur le bouton "nouveau" et indiquer le chemin du fichier bin de l'archive extraite (exemple: C:\Users\UnNom\Documents\apache-maven-3.9.4\bin)
+-Appuyer sur "Ok" pour confirmer
+-Ouvrer cmd ou PowerShell et taper "mvn -v" pour avoir la version actuelle de maven, l'installation est réussit si la commande est correctement executé
