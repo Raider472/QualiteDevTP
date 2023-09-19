@@ -1,6 +1,6 @@
-C:\DSI\_06_IRA_ResponsablePilote\ProgrammeJava\workspaceINRA-CTIG\_00_ASBank2018\src\test\java\com\iut\banque\test\modele\TestsCompteAvecDecouvert.java
-C:\DSI\_06_IRA_ResponsablePilote\ProgrammeJava\workspaceINRA-CTIG\_00_ASBank2018\src\test\java\com\iut\banque\test\modele\TestsCompte.java
-C:\DSI\_06_IRA_ResponsablePilote\ProgrammeJava\workspaceINRA-CTIG\_00_ASBank2018\src\test\java\com\iut\banque\test\dao\TestsDaoHibernate.java
-C:\DSI\_06_IRA_ResponsablePilote\ProgrammeJava\workspaceINRA-CTIG\_00_ASBank2018\src\test\java\com\iut\banque\test\facade\TestsBanqueManager.java
-C:\DSI\_06_IRA_ResponsablePilote\ProgrammeJava\workspaceINRA-CTIG\_00_ASBank2018\src\test\java\com\iut\banque\test\modele\TestsClient.java
-C:\DSI\_06_IRA_ResponsablePilote\ProgrammeJava\workspaceINRA-CTIG\_00_ASBank2018\src\test\java\com\iut\banque\test\modele\TestsCompteSansDecouvert.java
+C:\Users\gabri\Documents\QualiteDevTP\src\test\java\com\iut\banque\test\modele\TestsClient.java
+C:\Users\gabri\Documents\QualiteDevTP\src\test\java\com\iut\banque\test\modele\TestsCompteSansDecouvert.java
+C:\Users\gabri\Documents\QualiteDevTP\src\test\java\com\iut\banque\test\modele\TestsCompte.java
+C:\Users\gabri\Documents\QualiteDevTP\src\test\java\com\iut\banque\test\facade\TestsBanqueManager.java
+C:\Users\gabri\Documents\QualiteDevTP\src\test\java\com\iut\banque\test\modele\TestsCompteAvecDecouvert.java
+C:\Users\gabri\Documents\QualiteDevTP\src\test\java\com\iut\banque\test\dao\TestsDaoHibernate.java
