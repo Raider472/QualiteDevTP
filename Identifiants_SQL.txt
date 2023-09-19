@@ -1,0 +1,13 @@
+Database : allard19u_coa_banque_essais
+
+User1 : a 
+Mdp1 : a
+
+User2 : admin
+Mdp2 : adminpass
+
+User3 : client1
+Mdp3 : clientpass1
+
+User4 : client2
+Mdp4 : clientpass2
