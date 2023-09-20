@@ -1,2 +1,11 @@
-JDK 1.8
-mvn clean install -Dskiptests
+-!!! La configuration du projet se fera sur l'IDE Intellij (Community, IDEA, Ultimate, ...)
+
+- Télécharger l'installeur pour le serveur Tomcat version 9: https://tomcat.apache.org/download-90.cgi
+- Java Jre 1.8 (On peut l'installer directement grâce à Intellij)
+- (optionnel) Installer localement maven (voir ./Maven/Installer maven localement.txt)
+- lancer la commande dans le projet mvn clean install (-Dskiptests)
+- Installer le plugin smart tomcat pour Intellij (dans l'ide: File -> Settings -> Plugins -> Smart Tomcat
+- Configurer Smart Tomcat pour Intellij: Edit Configurations... -> Add New Configuration (ou le bouton "+") -> Smart Tomcat
+	Tomcat server: le chemin du serveur Tomcat 9 installé auparavant (exemple: C:\Program Files\Apache Software Foundation\Tomcat 9.0_Tomcat9_Java)
+	Deployment directory: Le chemin du fichier webapp du projet (exemple: C:/Users/Gabriel/Documents/QualiteDevTP/src/main/webapp)
+	Server port: Ne pas changer APPART, si vous avez changer le port pour le serveur Tomcat lors de son installation
