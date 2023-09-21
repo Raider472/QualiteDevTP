@@ -1,11 +1,20 @@
 -!!! La configuration du projet se fera sur l'IDE Intellij (Community, IDEA, Ultimate, ...)
 
-- Télécharger l'installeur pour le serveur Tomcat version 9: https://tomcat.apache.org/download-90.cgi
-- Java Jre 1.8 (On peut l'installer directement grâce à Intellij)
+- Télécharger le serveur Tomcat version 9 (le fichier tar.gz): https://tomcat.apache.org/download-90.cgi
+	-> Extraire les dossier de l'archives tar.gz (peu importe l'endroit) et se souvenir du chemin
+
+- Java Jre 1.8 (On peut l'installer directement grâce à Intellij ou telecharger une version manuellement)
+
 - (optionnel) Installer localement maven (voir ./Maven/Installer maven localement.txt)
-- lancer la commande dans le projet mvn clean install (-Dskiptests)
-- Installer le plugin smart tomcat pour Intellij (dans l'ide: File -> Settings -> Plugins -> Smart Tomcat
-- Configurer Smart Tomcat pour Intellij: Edit Configurations... -> Add New Configuration (ou le bouton "+") -> Smart Tomcat
-	Tomcat server: le chemin du serveur Tomcat 9 installé auparavant (exemple: C:\Program Files\Apache Software Foundation\Tomcat 9.0_Tomcat9_Java)
-	Deployment directory: Le chemin du fichier webapp du projet (exemple: C:/Users/Gabriel/Documents/QualiteDevTP/src/main/webapp)
-	Server port: Ne pas changer APPART, si vous avez changer le port pour le serveur Tomcat lors de son installation
+
+- lancer la commande dans le projet mvn clean install (-Dskiptests) (sur Intelij: ctrl+ctrl pour afficher la console maven)
+
+- Configurer Tomcat pour Intellij: Edit Configurations... -> Add New Configuration (ou le bouton "+") -> Tomcat Server -> Local
+	-> Application Server -> Configure... -> Tomcat Home: le chemin du server tomcat extrait du ficher tar.gz (exemple: C:\Users\Gabriel\Documents\Tomcat_server\apache-tomcat-9.0.80)
+		Normalement, une fois le chemin renseigner, les autre paramètres s'autocomplètent tout seul sinon, le "Tomcat base directory" s'agit du même chemin ci-dessus		
+
+	-> JRE: jre utilisé pour l'application, default ou jre 1.8
+
+	-> Tomcat Server settings: ne pas toucher appart si les ports on étaient modifier sur le serveur tomcat
+
+	-> Before launch: appuyer sur le "+" et ajouter un "Build Artifacts" puis sélectionner _00_ASBank2018:war
