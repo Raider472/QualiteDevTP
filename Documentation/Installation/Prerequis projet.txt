@@ -16,5 +16,8 @@
 	-> JRE: jre utilisé pour l'application, default ou jre 1.8
 
 	-> Tomcat Server settings: ne pas toucher appart si les ports on étaient modifier sur le serveur tomcat
+		Cocher la case: "Deploy applications configured in Tomcat instance"
 
 	-> Before launch: appuyer sur le "+" et ajouter un "Build Artifacts" puis sélectionner _00_ASBank2018:war
+
+	-> Deployment -> "+" -> Artifacts -> cocher "_00_ASBank2018:war"
