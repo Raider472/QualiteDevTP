@@ -1,0 +1,26 @@
+- Aller sur MySQL Installer
+	-> Ajouter un produit MYSQL Server 8.0
+	-> Télécharger et installer le produit ajouté
+	-> Mettre un mot de passe (root par défaut)
+	-> Ajouter un utilisateur et choisir localhost sur "Host"
+	-> Suivre les étapes par défaut
+
+- Aller sur MySQL Workbench
+	-> Créer une connection MYSQL
+	-> Mettre un nom pour la connection, le nom du host, 
+	   le port, l'utilisateur et le mot de passe
+	-> Tester la connection 
+	-> Créer une base de donnée (un schéma)
+	-> Cliquer sur la base de donnée ajouté
+	-> Ouvrir le fichier dumpSQL.sql qui est dans 
+	   le dossier scripts
+	-> Executer le programme
+- Aller sur IntelliJ
+	-> Installer le plugin "Datebase Tools and SQL" 
+	   si il n'est pas présent
+	-> Cliquer sur l'onglet Database 
+	-> Sélectionnez "Data Source" > "MySQL".
+	-> Ajouter les identifiants mis pour 
+	   la connection sur MYSQL Workbench
+	-> Tester la connection
+	-> Enregistrer la configuration 
