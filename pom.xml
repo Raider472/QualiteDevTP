@@ -34,11 +34,11 @@
 
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
-				<version>2.6</version>
+				<version>3.3.2</version>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
 					<failOnMissingWebXml>true</failOnMissingWebXml>
-					<webXml>src\main\webapp\WEB-INF\web.xml</webXml>
+					<webXml>WebContent/WEB-INF/web.xml</webXml>
 				</configuration>
 			</plugin>
 
@@ -67,11 +67,11 @@
 		<!-- <version>5.1.0.Final</version> -->
 		<!-- </dependency> -->
 
-<!--		<dependency>-->
-<!--			<groupId>mysql</groupId>-->
-<!--			<artifactId>mysql-connector-java</artifactId>-->
-<!--			<version>5.1.44</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.44</version>
+		</dependency>
 
 		<!-- http://mvnrepository.com/artifact/org.springframework/spring-context -->
 		<dependency>
