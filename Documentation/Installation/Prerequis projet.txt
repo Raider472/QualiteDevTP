@@ -22,12 +22,22 @@
 
 	-> Deployment -> "+" -> Artifacts -> cocher "_00_ASBank2018:war"
 
-- Télécharger la version actuelle de MYSQL Server : https://dev.mysql.com/downloads/installer/ 
+- Télécharger la version actuelle de MYSQL Installer en 331 Mo : https://dev.mysql.com/downloads/installer/ 
+	-> Choisir le type de Setup "Server only"
 	-> Suivre les étapes par défaut
 	-> Redirige vers MYSQL Installer
 
+- Télécharger la version actuelle de MySQL Workbench : https://dev.mysql.com/downloads/workbench/
+
+
 - MYSQL Connector-J 
+	-> Si vous avez déjà MySQL Connector-J, mettez la à jour sur IntelliJ. 
+	   Dans le cas contraire, suivez les étapes en ci-dessous
+	-> Télécharger la version actuelle de MYSQL Connector-J 
+	   en .zip et choisir l'OS "Platform Independent" : 
+	   https://dev.mysql.com/downloads/connector/j/
+	-> Si vous avez déjà MySQL Connector-J
 	-> Aller dans "structure du projet" sur IntelliJ
 	-> Sélectionner "libraries"
-	-> Ajouter le fichier .jar de MYSQL Connector-J présent dans le dossier lib
+	-> Ajouter le fichier .jar de MYSQL Connector-J à l'endroit où vous l'avez mis
 	-> Appliquer les modifications
