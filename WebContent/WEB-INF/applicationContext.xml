@@ -50,9 +50,9 @@
 		<property name="username" value="root" />
 		<property name="password" value="root" /> -->
 
-		<property name="url" value="jdbc:mysql://localhost:3306/java"
-			/> <property name="username" value="root" /> <property name="password"
-			value="" />
+		<property name="url" value="jdbc:mysql://localhost:3306/banque"
+			/> <property name="username" value="user" /> <property name="password"
+			value="root" />
 	</bean>
 
 	<!-- ============= Gestion des Transactions ============= -->

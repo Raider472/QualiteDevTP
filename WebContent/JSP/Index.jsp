@@ -9,7 +9,7 @@
 		alert('Ce TD a été donné pour les AS dans le cadre du cours de CO Avancé (Promotion 2017-2018)');
 	}
 </script>
-<link rel="stylesheet" href="/_00_ASBank2018/style/style.css" />
+<link rel="stylesheet" href="./style/style.css" />
 <link href="/_00_ASBank2018/style/favicon.ico" rel="icon"
 	type="image/x-icon" />
 <head>
@@ -20,7 +20,7 @@
 	<h1>Bienvenue sur l'application IUT Bank 2018</h1>
 	<p>
 		<img
-			src="https://www.iut-metz.univ-lorraine.fr/images/AdminSite/Logos/Logo_IUT_Metz.UL.small.png"
+			src="https://iut-metz.univ-lorraine.fr/sites/default/files/inline-images/logo-iut-metz.png"
 			alt="logo" />
 	</p>
 	<input type="button" value="Information" name="info"

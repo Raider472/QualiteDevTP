@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Formulaire de création d'utilisateur</title>
-<link rel="stylesheet" href="/ASBank2018/style/style.css" />
+<link rel="stylesheet" href="./style/style.css" />
 <script src="/_00_ASBank2018/js/jquery.js"></script>
 <script src="/_00_ASBank2018/js/jsCreerUtilisateur.js"></script>
 </head>
