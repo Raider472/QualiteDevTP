@@ -25,7 +25,7 @@
 - Télécharger la version actuelle de MYSQL Installer en 331 Mo : https://dev.mysql.com/downloads/installer/ 
 	-> Choisir le type de Setup "Server only"
 	-> Suivre les étapes par défaut
-	-> Ajouter un produit MySQL Server 8.0
+	-> Ajouter un produit MySQL Server 8.0.x
 	-> Télécharger et installer le produit ajouté
 	-> Configuration du serveur
 		--> Laisser le port à 3306
