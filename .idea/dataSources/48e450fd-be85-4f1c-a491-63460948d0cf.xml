@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="banque@localhost">
+<dataSource name="banquetest@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.48">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
@@ -1024,10 +1024,10 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="288" parent="1" name="banque">
-      <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="289" parent="1" name="banquetest">
+      <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="290" parent="1" name="information_schema">
@@ -1065,112 +1065,5 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="299" parent="288" name="compte">
-      <Engine>InnoDB</Engine>
-      <CollationName>latin1_swedish_ci</CollationName>
-    </table>
-    <table id="300" parent="288" name="utilisateur">
-      <Engine>InnoDB</Engine>
-      <CollationName>latin1_swedish_ci</CollationName>
-    </table>
-    <column id="301" parent="299" name="numeroCompte">
-      <DasType>varchar(50)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="302" parent="299" name="userId">
-      <DasType>varchar(50)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="303" parent="299" name="solde">
-      <DasType>double|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="304" parent="299" name="avecDecouvert">
-      <DasType>varchar(5)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="305" parent="299" name="decouvertAutorise">
-      <DasType>decimal(10)|0s</DasType>
-      <Position>5</Position>
-    </column>
-    <foreign-key id="306" parent="299" name="fk_Compte_userId">
-      <ColNames>userId</ColNames>
-      <RefColNames>userId</RefColNames>
-      <RefTableName>utilisateur</RefTableName>
-    </foreign-key>
-    <index id="307" parent="299" name="PRIMARY">
-      <ColNames>numeroCompte</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="308" parent="299" name="index_userClient">
-      <ColNames>userId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="309" parent="299" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <column id="310" parent="300" name="userId">
-      <DasType>varchar(50)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="311" parent="300" name="nom">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="312" parent="300" name="prenom">
-      <DasType>varchar(45)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <column id="313" parent="300" name="adresse">
-      <DasType>varchar(100)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>4</Position>
-    </column>
-    <column id="314" parent="300" name="userPwd">
-      <DasType>varchar(45)|0s</DasType>
-      <Position>5</Position>
-    </column>
-    <column id="315" parent="300" name="male">
-      <DasType>bit(1)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>6</Position>
-    </column>
-    <column id="316" parent="300" name="type">
-      <DasType>varchar(10)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>7</Position>
-    </column>
-    <column id="317" parent="300" name="numClient">
-      <DasType>varchar(45)|0s</DasType>
-      <Position>8</Position>
-    </column>
-    <index id="318" parent="300" name="PRIMARY">
-      <ColNames>userId</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="319" parent="300" name="numClient_UNIQUE">
-      <ColNames>numClient</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="320" parent="300" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="321" parent="300" name="numClient_UNIQUE">
-      <UnderlyingIndexName>numClient_UNIQUE</UnderlyingIndexName>
-    </key>
   </database-model>
 </dataSource>
