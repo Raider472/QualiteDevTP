@@ -1,0 +1,12 @@
+Il existe deux raisons pour lesquelles les deux dossier du projets sont de tailles différentes à savoir :
+ -  _00_ASBank2018
+ -  _00_ASBank2023
+
+Le premier pèse 59Mo tandis que l'autre pèse 119ko.
+
+La première raison de cette différence reside dans l'existence d'un snapshot du projet dans "_ASBank2018".
+Ce snapshot comprenait une copie statique de l'ensemble du projet à un moment donné, y comprs les fichiers et données
+non essensiels. Le fichier .war du snapshot pèse 29Mo et les fichiers et données pèsent 32Mo.
+
+La seconde raison (moins significative) de cette différence vient de  l'outil qu'ils ont utilisé pour travailler à plusieurs en même temps.
+En effet c'est l'outil Subversion (SVN) qu'ils ont utilisé. Cet outil crée des dosseir .svn, pesant une trentaine de Ko en moyenne,dans chaque dossier du projet.
