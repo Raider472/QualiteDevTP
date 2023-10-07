@@ -8,6 +8,8 @@
 
 - (optionnel) Installer localement maven (voir Documentation/Maven/Installer maven localement.txt)<br/>
 
+- renseigner sur intellij le sdk 1.8 -> "File" -> "Project structure" -> SDK: ***-1.8
+
 - lancer la commande dans le projet mvn clean install (-Dskiptests) (sur Intelij: ctrl+ctrl pour afficher la console maven)<br/>
 
 - Configurer Tomcat pour Intellij: Edit Configurations... -> Add New Configuration (ou le bouton "+") -> Tomcat Server -> Local
@@ -56,6 +58,7 @@
 	- -> Double-cliquer sur le schéma de base de données ajouté (après avoir cliqué, celle-ci obtiendra une police en gras)
 	- -> Ouvrir le fichier dumpSQL.sql qui est dans le dossier "scripts" du projet /projet/script/dumpSQL.sql (pour ouvrir le script, appuyer sur le deuxième bouton en haut)
 	- -> Exécuter le script (bouton de l'éclair)
+	- -> Recréer un schéma "banquetest" et refaire les mêmes étapes ci-dessus mais avec le fichier "dumpSQL_JUnitTest"
 			
 - Configuration de la BDD sur Intellij
 	- -> Installer le plugin "Database Tools and SQL" s'il n'est pas présent (File -> Settings -> Plugins)
@@ -67,3 +70,4 @@
 		- --> Database: le nom du schéma ajouté = banque
 	- -> Tester la connexion
 	- -> Enregistrer la configuration
+	- -> Refaire les étapes ci-dessus une nouvelle fois pour le schéma "banquetest" (Database: le nom du schéma ajouté = banquetest)
