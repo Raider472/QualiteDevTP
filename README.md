@@ -21,7 +21,7 @@
 
 	- -> Before launch: appuyer sur le "+" et ajouter un "Build Artifacts" puis sélectionner _00_ASBank2018:war
 
-	-> Deployment -> "+" -> Artifacts -> cocher "_00_ASBank2018:war"
+	- -> Deployment -> "+" -> Artifacts -> cocher "_00_ASBank2018:war"
 
 - Télécharger la version actuelle (8.0.34) de MYSQL Installer en 331 Mo : https://dev.mysql.com/downloads/installer/ 
 	- -> Choisir le type de Setup "Server only"
