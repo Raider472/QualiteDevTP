@@ -1,5 +1,6 @@
 package com.iut.banque.controller;
 
+import jakarta.servlet.ServletContext;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -80,7 +81,7 @@ public class CreerCompte extends ActionSupport {
 	public CreerCompte() {
 		System.out.println("In Constructor from CreerCompte class ");
 		ApplicationContext context = WebApplicationContextUtils
-				.getRequiredWebApplicationContext(ServletActionContext.getServletContext());
+				.getRequiredWebApplicationContext((ServletContext) ServletActionContext.getServletContext());
 		this.banque = (BanqueFacade) context.getBean("banqueFacade");
 	}
 

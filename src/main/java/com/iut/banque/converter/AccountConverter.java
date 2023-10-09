@@ -1,13 +1,11 @@
 package com.iut.banque.converter;
 
-import java.util.Map;
-
-import org.apache.struts2.util.StrutsTypeConverter;
-
-import com.opensymphony.xwork2.conversion.TypeConversionException;
-
 import com.iut.banque.interfaces.IDao;
 import com.iut.banque.modele.Compte;
+import com.opensymphony.xwork2.conversion.TypeConversionException;
+import org.apache.struts2.util.StrutsTypeConverter;
+
+import java.util.Map;
 
 /**
  * Cette classe contient des méthodes permettant de convertir un compte en
