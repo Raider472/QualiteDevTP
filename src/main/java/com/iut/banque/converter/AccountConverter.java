@@ -2,7 +2,6 @@ package com.iut.banque.converter;
 
 import com.iut.banque.interfaces.IDao;
 import com.iut.banque.modele.Compte;
-import com.opensymphony.xwork2.conversion.TypeConversionException;
 import org.apache.struts2.util.StrutsTypeConverter;
 
 import java.util.Map;
@@ -62,7 +61,11 @@ public class AccountConverter extends StrutsTypeConverter {
 	public Object convertFromString(Map context, String[] values, Class classe) {
 		Compte compte = (Compte) dao.getAccountById(values[0]);
 		if (compte == null) {
-			throw new TypeConversionException("Impossible de convertir la chaine suivante : " + values[0]);
+			try {
+				throw new Exception("Impossible de convertir la chaine suivante : " + values[0]);
+			} catch (Exception e) {
+				throw new RuntimeException(e);
+			}
 		}
 		return compte;
 	}

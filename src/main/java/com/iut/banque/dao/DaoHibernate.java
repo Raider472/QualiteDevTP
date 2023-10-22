@@ -7,6 +7,10 @@ import java.util.Map;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.IllegalOperationException;
@@ -33,6 +37,7 @@ import com.iut.banque.modele.Utilisateur;
 public class DaoHibernate implements IDao {
 
 	private SessionFactory sessionFactory;
+	private EntityManager entityManager;
 
 	public DaoHibernate() {
 		System.out.println("==================");
@@ -50,6 +55,10 @@ public class DaoHibernate implements IDao {
 	 */
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
+	}
+
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
 	}
 
 	/**
@@ -223,28 +232,34 @@ public class DaoHibernate implements IDao {
 	 */
 	@Override
 	public Map<String, Client> getAllClients() {
-		Session session = sessionFactory.getCurrentSession();
-		@SuppressWarnings("unchecked")
-		List<Object> res = session.createCriteria(Client.class).list();
-		Map<String, Client> ret = new HashMap<String, Client>();
-		for (Object client : res) {
-			ret.put(((Client) client).getUserId(), (Client) client);
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<Client> criteriaQuery = criteriaBuilder.createQuery(Client.class);
+		Root<Client> root = criteriaQuery.from(Client.class);
+		criteriaQuery.select(root);
+
+		List<Client> clients = entityManager.createQuery(criteriaQuery).getResultList();
+		Map<String, Client> ret = new HashMap<>();
+
+		for (Client client : clients) {
+			ret.put(client.getUserId(), client);
 		}
 		return ret;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public Map<String, Gestionnaire> getAllGestionnaires() {
-		Session session = sessionFactory.getCurrentSession();
-		@SuppressWarnings("unchecked")
-		List<Object> res = session.createCriteria(Gestionnaire.class).list();
-		Map<String, Gestionnaire> ret = new HashMap<String, Gestionnaire>();
-		for (Object gestionnaire : res) {
-			ret.put(((Gestionnaire) gestionnaire).getUserId(), (Gestionnaire) gestionnaire);
+		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+		CriteriaQuery<Gestionnaire> criteriaQuery = criteriaBuilder.createQuery(Gestionnaire.class);
+		Root<Gestionnaire> root = criteriaQuery.from(Gestionnaire.class);
+		criteriaQuery.select(root);
+
+		List<Gestionnaire> gestionnaires = entityManager.createQuery(criteriaQuery).getResultList();
+		Map<String, Gestionnaire> ret = new HashMap<>();
+
+		for (Gestionnaire gestionnaire : gestionnaires) {
+			ret.put(gestionnaire.getUserId(), gestionnaire);
 		}
+
 		return ret;
 	}
 
