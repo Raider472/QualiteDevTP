@@ -24,11 +24,6 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="daoHibernate" class="com.iut.banque.dao.DaoHibernate"
-		  scope="singleton">
-		<property name="entityManager" ref="entityManager" />
-	</bean>
-
 	<!-- La session factory. Utilise Hibernate. Il est possible d'utiliser <property 
 		name="annotatedClasses"> avec une liste de classes au lieu de <property name="packagesToScan" 
 		value="com.iut.banque.modele" /> -->
@@ -103,5 +98,4 @@
 		class="com.iut.banque.converter.AccountConverter" scope="singleton">
 		<constructor-arg ref="daoHibernate" />
 	</bean>
-	<bean id="entityManager"/>
 </beans>

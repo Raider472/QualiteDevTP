@@ -7,10 +7,10 @@ import java.util.Map;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
-import javax.persistence.EntityManager;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Root;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Root;
 
 import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.IllegalOperationException;
@@ -25,10 +25,10 @@ import com.iut.banque.modele.Utilisateur;
 
 /**
  * Implémentation de IDao utilisant Hibernate.
- * 
+ *
  * Les transactions sont gerés par Spring et utilise le transaction manager
  * défini dans l'application Context.
- * 
+ *
  * Par défaut, la propagation des transactions est REQUIRED, ce qui signifie que
  * si une transaction est déjà commencé elle va être réutilisée. Cela est util
  * pour les tests unitaires de la DAO.
@@ -46,10 +46,10 @@ public class DaoHibernate implements IDao {
 
 	/**
 	 * Setter pour la SessionFactory.
-	 * 
+	 *
 	 * Cette méthode permet à Spring d'injecter la factory au moment de la
 	 * construction de la DAO.
-	 * 
+	 *
 	 * @param sessionFactory
 	 *            : la session factory nécessaire à la gestion des sessions
 	 */
@@ -63,7 +63,7 @@ public class DaoHibernate implements IDao {
 
 	/**
 	 * {@inheritDoc}
-	 * @throws IllegalOperationException 
+	 * @throws IllegalOperationException
 	 */
 	@Override
 	public CompteAvecDecouvert createCompteAvecDecouvert(double solde, String numeroCompte, double decouvertAutorise,
@@ -147,7 +147,7 @@ public class DaoHibernate implements IDao {
 
 	/**
 	 * {@inheritDoc}
-	 * 
+	 *
 	 * @throws IllegalFormatException
 	 * @throws IllegalArgumentException
 	 */
