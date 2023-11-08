@@ -57,6 +57,6 @@
 	<bean id="banqueManager" class="com.iut.banque.facade.BanqueManager">
 		<property name="dao" ref="daoHibernate" />
 	</bean>
-	
-	
+
+
 </beans>

@@ -37,7 +37,7 @@ import com.iut.banque.modele.Utilisateur;
 public class DaoHibernate implements IDao {
 
 	private SessionFactory sessionFactory;
-	private EntityManager entityManager;
+	private EntityManager entityManager = null;
 
 	public DaoHibernate() {
 		System.out.println("==================");
