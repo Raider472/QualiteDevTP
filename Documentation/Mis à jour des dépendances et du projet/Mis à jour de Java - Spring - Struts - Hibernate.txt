@@ -1,0 +1,21 @@
+Tout d'abord, je me suis occupé (Nicolas) sur la branche niszco, de la mis à jour des dépendances du projet.
+
+Dans un premier temps, il a fallu migrer Java EE vers Jakarta EE pour le serveur de l'application, cette manipulation a
+demandé de repasser en revu les importations de Javax et de les remplacer par Jakarta, puis de modifier le code pour qu'il
+corresponde au exigences de Jakarta.
+
+Ensuite, dans un seconde temps, en essayant de mettre à jour les différentes dépendances, j'ai du tester la compilation et modifier les morceaux de
+codes qui devaient être mis à jour pour que la compilation se fasse sans aucunes erreurs.
+
+Après cela, les plugins "maven-war" 3.4.0 et "maven-compile" 3.11.0 ont été modifié afin de prendre en charge le dernier JDK de Java (version 21)
+et de leur dernières versions respectivement.
+
+Le driver "mysql-connector-java" 8.0.34 a du être changé par une autre version "mysql-connector-j" 8.1.0 pour correspondre à la dernière version sans problème de sécurité
+(Cette procédure est recommandée sur maven.repository.com).
+
+L'ajout de plusieurs autres nouvelles dépendances fut aussi de mise, notamment "log4j-core", "log4j-api" et le plugin "maven-ressources"
+3.3.1, plus les dernières versions de Spring / Struts et Hibernate.
+Ces ajouts ont permis de faire fonctionner la compilation sans erreurs et/ou warnings.
+
+Finalement, à partir de tous ces changements, la compilation avec les tests marchait parfaitement et les versions de Java,
+Spring, Struts et Hibernate étaient toutes à leurs dernières versions disponibles.
