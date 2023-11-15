@@ -10,7 +10,7 @@ codes qui devaient être mis à jour pour que la compilation se fasse sans aucun
 Après cela, les plugins "maven-war" 3.4.0 et "maven-compile" 3.11.0 ont été modifié afin de prendre en charge le dernier JDK de Java (version 21)
 et de leur dernières versions respectivement.
 
-Le driver "mysql-connector-java" 8.0.34 a du être également aussi par "mysql-connector-j" 8.1.0 pour correspondre à la dernière version sans problème de sécurité
+Le driver "mysql-connector-java" 8.0.34 a du être changé par une autre version "mysql-connector-j" 8.1.0 pour correspondre à la dernière version sans problème de sécurité
 (Cette procédure est recommandée sur maven.repository.com).
 
 L'ajout de plusieurs autres nouvelles dépendances fut aussi de mise, notamment "log4j-core", "log4j-api" et le plugin "maven-ressources"
