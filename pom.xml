@@ -47,15 +47,6 @@
 					<webXml>WebContent/WEB-INF/web.xml</webXml>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.apache.tomcat.maven</groupId>
-				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.2</version>
-				<configuration>
-					<path>/ASBank-2018</path>
-				</configuration>
-			</plugin>
 		</plugins>
 
 	</build>
@@ -155,7 +146,7 @@
 
 		<!-- http://mvnrepository.com/artifact/com.google.gwt/gwt-servlet -->
 		<dependency>
-			<groupId>com.google.gwt</groupId>
+			<groupId>org.gwtproject</groupId>
 			<artifactId>gwt-servlet</artifactId>
 			<version>2.10.0</version>
 		</dependency>
