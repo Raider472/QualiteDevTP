@@ -7,10 +7,6 @@ import java.util.Map;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Root;
 
 import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.IllegalOperationException;
@@ -22,6 +18,8 @@ import com.iut.banque.modele.CompteAvecDecouvert;
 import com.iut.banque.modele.CompteSansDecouvert;
 import com.iut.banque.modele.Gestionnaire;
 import com.iut.banque.modele.Utilisateur;
+
+import static org.hibernate.Hibernate.list;
 
 /**
  * Implémentation de IDao utilisant Hibernate.
@@ -37,7 +35,6 @@ import com.iut.banque.modele.Utilisateur;
 public class DaoHibernate implements IDao {
 
 	private SessionFactory sessionFactory;
-	private EntityManager entityManager = null;
 
 	public DaoHibernate() {
 		System.out.println("==================");
@@ -57,17 +54,13 @@ public class DaoHibernate implements IDao {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public void setEntityManager(EntityManager entityManager) {
-		this.entityManager = entityManager;
-	}
-
 	/**
 	 * {@inheritDoc}
 	 * @throws IllegalOperationException
 	 */
 	@Override
 	public CompteAvecDecouvert createCompteAvecDecouvert(double solde, String numeroCompte, double decouvertAutorise,
-			Client client) throws TechnicalException, IllegalFormatException, IllegalOperationException {
+														 Client client) throws TechnicalException, IllegalFormatException, IllegalOperationException {
 		Session session = sessionFactory.getCurrentSession();
 		CompteAvecDecouvert compte = session.get(CompteAvecDecouvert.class, numeroCompte);
 		if (compte != null) {
@@ -153,7 +146,7 @@ public class DaoHibernate implements IDao {
 	 */
 	@Override
 	public Utilisateur createUser(String nom, String prenom, String adresse, boolean male, String userId,
-			String userPwd, boolean manager, String numClient)
+								  String userPwd, boolean manager, String numClient)
 			throws TechnicalException, IllegalArgumentException, IllegalFormatException {
 		Session session = sessionFactory.getCurrentSession();
 
@@ -232,34 +225,28 @@ public class DaoHibernate implements IDao {
 	 */
 	@Override
 	public Map<String, Client> getAllClients() {
-		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<Client> criteriaQuery = criteriaBuilder.createQuery(Client.class);
-		Root<Client> root = criteriaQuery.from(Client.class);
-		criteriaQuery.select(root);
-
-		List<Client> clients = entityManager.createQuery(criteriaQuery).getResultList();
+		Session session = sessionFactory.getCurrentSession();
+		@SuppressWarnings("unchecked")
+		List<Client> res = session.createQuery("FROM Client", Client.class).list();
 		Map<String, Client> ret = new HashMap<>();
-
-		for (Client client : clients) {
+		for (Client client : res) {
 			ret.put(client.getUserId(), client);
 		}
 		return ret;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Map<String, Gestionnaire> getAllGestionnaires() {
-		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<Gestionnaire> criteriaQuery = criteriaBuilder.createQuery(Gestionnaire.class);
-		Root<Gestionnaire> root = criteriaQuery.from(Gestionnaire.class);
-		criteriaQuery.select(root);
-
-		List<Gestionnaire> gestionnaires = entityManager.createQuery(criteriaQuery).getResultList();
+		Session session = sessionFactory.getCurrentSession();
+		@SuppressWarnings("unchecked")
+		List<Gestionnaire> res = session.createQuery("FROM Gestionnaire", Gestionnaire.class).list();
 		Map<String, Gestionnaire> ret = new HashMap<>();
-
-		for (Gestionnaire gestionnaire : gestionnaires) {
+		for (Gestionnaire gestionnaire : res) {
 			ret.put(gestionnaire.getUserId(), gestionnaire);
 		}
-
 		return ret;
 	}
 
