@@ -2,7 +2,9 @@ package com.iut.banque.controller;
 
 import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.IllegalOperationException;
+import com.iut.banque.facade.BanqueFacade;
 import com.iut.banque.modele.CompteAvecDecouvert;
+import jakarta.inject.Inject;
 
 public class DetailCompteEdit extends DetailCompte {
 
@@ -12,8 +14,9 @@ public class DetailCompteEdit extends DetailCompte {
 	/**
 	 * Constructeur sans argument de DetailCompteEdit
 	 */
-	public DetailCompteEdit() {
-		super();
+	@Inject
+	public DetailCompteEdit(BanqueFacade banque) {
+		super(banque);
 		System.out.println("======================================");
 		System.out.println("Dans le constructeur DetailCompteEdit");
 	}

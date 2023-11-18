@@ -177,6 +177,11 @@
 			<artifactId>jakarta.persistence-api</artifactId>
 			<version>3.2.0-B01</version>
 		</dependency>
+        <dependency>
+            <groupId>jakarta.inject</groupId>
+            <artifactId>jakarta.inject-api</artifactId>
+            <version>2.0.1.MR</version>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 </project>
