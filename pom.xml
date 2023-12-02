@@ -53,7 +53,8 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<path>/ASBank-2018</path>
+					<url>http://localhost:8080/_00_ASBank2018_war</url>
+					<path>/_00_ASBank2018_war</path>
 				</configuration>
 			</plugin>
 		</plugins>
