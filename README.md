@@ -51,7 +51,7 @@
 			- ---> choisir le mot de passe et le confirmer
 			- ---> cliquer sur le bouton "ok" pour confirmer
 	- --> Choisir les options par défauts pour le reste de la configuration
-   	- ![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/337d5c99-bc0a-49ce-8b47-2989e924e504)
+   	![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/337d5c99-bc0a-49ce-8b47-2989e924e504)
 
 
 - Télécharger la version actuelle de MySQL Workbench pour votre OS : https://dev.mysql.com/downloads/workbench/
