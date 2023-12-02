@@ -47,6 +47,16 @@
 					<webXml>WebContent/WEB-INF/web.xml</webXml>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<url>http://localhost:8080/_00_ASBank2018_war</url>
+					<path>/_00_ASBank2018_war</path>
+				</configuration>
+			</plugin>
 		</plugins>
 
 	</build>
