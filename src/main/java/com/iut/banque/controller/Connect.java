@@ -2,6 +2,7 @@ package com.iut.banque.controller;
 
 import java.util.Map;
 
+import com.iut.banque.service.Hachage;
 import jakarta.inject.Inject;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -47,7 +48,7 @@ public class Connect extends ActionSupport {
 
 		int loginResult;
 		try {
-			loginResult = banque.tryLogin(userCde, userPwd);
+			loginResult = banque.tryLogin(userCde, Hachage.encrypt(userPwd));
 		} catch (Exception e) {
 			e.printStackTrace();
 			loginResult = LoginConstants.ERROR;
