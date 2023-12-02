@@ -2,23 +2,23 @@
 
 
 - Télécharger le serveur Tomcat version 9 (le fichier core tar.gz): https://tomcat.apache.org/download-90.cgi
-	- -> Extraire les dossiers de l'archive tar.gz préférablement dans le répertoire "Documents") et se souvenir du chemin
+	- -> Extraire les dossiers de l'archive tar.gz préférablement dans le répertoire "Documents" et se souvenir du chemin
 
-- Java Jre 1.8 (On peut l'installer directement grâce à Intellij ou télécharger une version manuellement)<br/>
+- Java Jre 11 (On peut l'installer directement grâce à Intellij ou télécharger une version manuellement)<br/>
 
-- (optionnel) Installer localement maven (voir Documentation/Maven/Installer maven localement.txt)<br/>
+- (optionnel) Installer localement maven (voir Document Annexes/Installer maven localement.txt)<br/>
 
-- renseigner sur intellij le sdk 1.8 -> "File" -> "Project structure" -> SDK: ***-1.8
+- renseigner sur intellij le sdk 11 -> "File" -> "Project structure" -> SDK: ***-11
 
-- lancer la commande dans le projet mvn clean install (-Dskiptests) (sur Intelij: ctrl+ctrl pour afficher la console maven)<br/>
+- lancer la commande dans le projet mvn clean install (-Dskiptests si jamais les tests ne passent pas) (sur Intelij: ctrl+ctrl pour afficher la console maven)<br/>
 
 - Configurer Tomcat pour Intellij: Edit Configurations... -> Add New Configuration (ou le bouton "+") -> Tomcat Server -> Local
 	- -> Application Server -> Configure... -> Tomcat Home: le chemin du server tomcat extrait du ficher tar.gz (exemple: C:\Users\Gabriel\Documents\Tomcat_server\apache-tomcat-9.0.80)
 		- --> Normalement, une fois le chemin renseignait, les autres paramètres s'autocompletent tout seul, sinon, le "Tomcat base directory" s'agit du même chemin ci-dessus
 
-	- -> JRE: jre utilisé pour l'application, default ou jre 1.8
+	- -> JRE: jre utilisé pour l'application, default ou jre 11
 
-	- -> Tomcat Server settings: ne pas toucher appart si le port, a été modifier sur le serveur tomcat
+	- -> Tomcat Server settings: ne pas toucher appart si le port a été modifier sur le serveur
 		- --> Cocher la case: "Deploy applications configured in Tomcat instance"
 
 	- -> Before launch: appuyer sur le "+" et ajouter un "Build Artifacts" puis sélectionner _00_ASBank2018:war
@@ -48,7 +48,7 @@
 	- -> Ajoutez les identifiants
 		- --> Connection Name -> Nommer la connexion
 		- --> Hostname = localhost
-		- --> Port -> seulement le changer si le port du serveur MySQL a été modifié pendant l'installation
+		- --> Port -> seulement le changer si le port par défaut du serveur MySQL a été modifié pendant l'installation
 		- --> Username
 		- --> Password -> store in vault -> taper le mot de passe de l'utilisateur
 		- --> (optionel ) Tester la connection avec le bouton "Test Connection"
