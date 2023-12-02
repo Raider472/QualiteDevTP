@@ -11,10 +11,14 @@
 - renseigner sur intellij le sdk 11 -> "File" -> "Project structure" -> SDK: ***-11
 
 - lancer la commande dans le projet mvn clean install (-Dskiptests si jamais les tests ne passent pas) (sur Intelij: ctrl+ctrl pour afficher la console maven)<br/>
+![mvnclean](https://github.com/Raider472/QualiteDevTP/assets/60116030/e76f257f-3a66-4cfe-9a4d-0337ce30b03b)
 
 - Configurer Tomcat pour Intellij: Edit Configurations... -> Add New Configuration (ou le bouton "+") -> Tomcat Server -> Local
 	- -> Application Server -> Configure... -> Tomcat Home: le chemin du server tomcat extrait du ficher tar.gz (exemple: C:\Users\Gabriel\Documents\Tomcat_server\apache-tomcat-9.0.80)
 		- --> Normalement, une fois le chemin renseignait, les autres paramètres s'autocompletent tout seul, sinon, le "Tomcat base directory" s'agit du même chemin ci-dessus
+    		- ![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/ac781343-6f6e-4431-a31e-a3f72d840367)
+        	- ![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/f0df2e26-1554-4afe-9faf-caa77c1b81e2)
+           	- ![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/28fa29bb-f4c6-4e3f-ae57-a0b5ce942ed6)
 
 	- -> JRE: jre utilisé pour l'application, default ou jre 11
 
@@ -24,6 +28,8 @@
 	- -> Before launch: appuyer sur le "+" et ajouter un "Build Artifacts" puis sélectionner _00_ASBank2018:war
 
 	- -> Deployment -> "+" -> Artifacts -> cocher "_00_ASBank2018:war"
+
+   	- ![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/64ff4166-a89c-4501-814a-7a17547d4eb4)
 
 - Télécharger la version actuelle (8.0.34) de MYSQL Installer en 331 Mo : https://dev.mysql.com/downloads/installer/ 
 	- -> Choisir le type de Setup "Server only"
