@@ -41,16 +41,23 @@
 	- -> Télécharger et installer le produit ajouté
 	- -> Configuration du serveur
 		- --> Laisser le port à 3306
+    
  		![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/7dde225f-04bb-46f3-ba13-15e2763937d0)
 		- --> Choisir un mot de passe pour l'user "root"
+    
     		![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/dfdd1b83-5440-4128-b049-412e33f995d3)
+    
 		- --> (optionnel) Créer un utilisateur en appuyant sur le bouton "add user"
-    		![rougeConfigure](https://github.com/Raider472/QualiteDevTP/assets/60116030/63c33aad-dde4-4fa3-8b44-e54043488d14)
+    
+    		![addUserRouge](https://github.com/Raider472/QualiteDevTP/assets/60116030/f68c01a9-fcee-48e0-94ea-630462310d6b)
+
 			- ---> choisir le username
 			- ---> Host = localhost
 			- ---> choisir le mot de passe et le confirmer
 			- ---> cliquer sur le bouton "ok" pour confirmer
+     
      			![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/337d5c99-bc0a-49ce-8b47-2989e924e504)
+     
 	- --> Choisir les options par défauts pour le reste de la configuration
 
 
