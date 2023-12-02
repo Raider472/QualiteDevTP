@@ -41,23 +41,16 @@
 	- -> Télécharger et installer le produit ajouté
 	- -> Configuration du serveur
 		- --> Laisser le port à 3306
-    
  		![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/7dde225f-04bb-46f3-ba13-15e2763937d0)
 		- --> Choisir un mot de passe pour l'user "root"
-    
     		![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/dfdd1b83-5440-4128-b049-412e33f995d3)
-    
 		- --> (optionnel) Créer un utilisateur en appuyant sur le bouton "add user"
-    
     		![addUserRouge](https://github.com/Raider472/QualiteDevTP/assets/60116030/f68c01a9-fcee-48e0-94ea-630462310d6b)
-
 			- ---> choisir le username
 			- ---> Host = localhost
 			- ---> choisir le mot de passe et le confirmer
 			- ---> cliquer sur le bouton "ok" pour confirmer
-     
      			![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/337d5c99-bc0a-49ce-8b47-2989e924e504)
-     
 	- --> Choisir les options par défauts pour le reste de la configuration
 
 
@@ -75,19 +68,19 @@
 		- --> appuyer sur le bouton "ok" pour confirmer
   		![Passwordwork](https://github.com/Raider472/QualiteDevTP/assets/60116030/7737f7f7-c99b-430c-a5dc-5fa66fd6dd05)
 	- -> Créer un schéma de base de données (4ème icône en haut) -> nommer la "banque" -> appuyer sur le bouton "Apply" en bas et confirmer une nouvelle fois dans l'interface qui apparaîtra
-   	![IconWork](https://github.com/Raider472/QualiteDevTP/assets/60116030/619d2073-d0a1-40ae-8156-6012eff0edd2)
+   	![creerSchema](https://github.com/Raider472/QualiteDevTP/assets/60116030/050a4df3-5a33-4486-903f-fce473825c8d)
    	![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/6b0315bc-a8e6-4631-b95f-783180dfb72e)
 	- -> Dans le navigateur, appuyer sur le bouton "Schemas" en bas
 	- -> Double-cliquer sur le schéma de base de données ajouté (après avoir cliqué, celle-ci obtiendra une police en gras)
    	![BanqueRouge](https://github.com/Raider472/QualiteDevTP/assets/60116030/dd3871b8-05a6-4b00-b523-0726eec239ff)
 	- -> Ouvrir le fichier dumpSQL.sql qui est dans le dossier "scripts" du projet /projet/script/dumpSQL.sql (pour ouvrir le script, appuyer sur le deuxième bouton en haut)
-   	![Sccript2](https://github.com/Raider472/QualiteDevTP/assets/60116030/5c82e343-cdb9-4ae0-8c01-4d8710a07288)
+   	![OuvrirScripte](https://github.com/Raider472/QualiteDevTP/assets/60116030/77adb28e-f1fb-454b-9858-4c4f7cacfe38)
 	- -> Exécuter le script (bouton de l'éclair)
    	![Eclair](https://github.com/Raider472/QualiteDevTP/assets/60116030/8994f33e-c7c9-48f5-83a6-708025834c25)
 	- -> Recréer un schéma "banquetest" et refaire les mêmes étapes ci-dessus mais avec le fichier "dumpSQL_JUnitTest"
 			
 - Configuration de la BDD sur Intellij
-	- -> Installer le plugin "Database Tools and SQL" s'il n'est pas présent (File -> Settings -> Plugins)
+	- -> Installer le plugin "Database Tools and SQL" s'il n'est pas présent (File -> Settings -> Plugins) (il sera probablement deja présent)
 	- -> Cliquer sur l'onglet Database (à droite de l'IDE avec une icone de base de données en dessous/dessus de la cloche)
 	- -> Appuyer sur le bouton "+" puis sélectionnez "Data Source" -> "MySQL".
 	- -> Ajouter les identifiants mis pour la configuration du serveur et la connexion sur MySQL Workbench
