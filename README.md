@@ -50,7 +50,9 @@
 			- ---> Host = localhost
 			- ---> choisir le mot de passe et le confirmer
 			- ---> cliquer sur le bouton "ok" pour confirmer
+   
      			![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/337d5c99-bc0a-49ce-8b47-2989e924e504)
+     
 	- --> Choisir les options par défauts pour le reste de la configuration
 
 
@@ -69,6 +71,7 @@
   		![Passwordwork](https://github.com/Raider472/QualiteDevTP/assets/60116030/7737f7f7-c99b-430c-a5dc-5fa66fd6dd05)
 	- -> Créer un schéma de base de données (4ème icône en haut) -> nommer la "banque" -> appuyer sur le bouton "Apply" en bas et confirmer une nouvelle fois dans l'interface qui apparaîtra
    	![creerSchema](https://github.com/Raider472/QualiteDevTP/assets/60116030/050a4df3-5a33-4486-903f-fce473825c8d)
+   
    	![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/6b0315bc-a8e6-4631-b95f-783180dfb72e)
 	- -> Dans le navigateur, appuyer sur le bouton "Schemas" en bas
 	- -> Double-cliquer sur le schéma de base de données ajouté (après avoir cliqué, celle-ci obtiendra une police en gras)
