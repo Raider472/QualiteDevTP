@@ -91,6 +91,6 @@
 		- --> Database: le nom du schéma ajouté = banque
     		![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/d5d5ecb3-3b44-4db3-8bfc-cf48d08dd2f4)
 	- -> Tester la connexion
-   	![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/f27d460b-dfda-435a-bba7-af4ca4e8db13)
+   	![TestConnection](https://github.com/Raider472/QualiteDevTP/assets/60116030/85efcd4d-5f41-4711-b0f6-30f9470e4165)
 	- -> Enregistrer la configuration
 	- -> Refaire les étapes ci-dessus une nouvelle fois pour le schéma "banquetest" (Database: le nom du schéma ajouté = banquetest)
