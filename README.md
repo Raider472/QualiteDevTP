@@ -82,11 +82,15 @@
 - Configuration de la BDD sur Intellij
 	- -> Installer le plugin "Database Tools and SQL" s'il n'est pas présent (File -> Settings -> Plugins) (il sera probablement deja présent)
 	- -> Cliquer sur l'onglet Database (à droite de l'IDE avec une icone de base de données en dessous/dessus de la cloche)
+   	![IDE](https://github.com/Raider472/QualiteDevTP/assets/60116030/5320b592-a5c1-430a-885b-41367bec9c40)
 	- -> Appuyer sur le bouton "+" puis sélectionnez "Data Source" -> "MySQL".
+   	![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/d1fdbc6d-e73c-4ebb-99ab-6279b1b9b054)
 	- -> Ajouter les identifiants mis pour la configuration du serveur et la connexion sur MySQL Workbench
 		- --> User
 		- --> Password
 		- --> Database: le nom du schéma ajouté = banque
+    		![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/d5d5ecb3-3b44-4db3-8bfc-cf48d08dd2f4)
 	- -> Tester la connexion
+   	![image](https://github.com/Raider472/QualiteDevTP/assets/60116030/f27d460b-dfda-435a-bba7-af4ca4e8db13)
 	- -> Enregistrer la configuration
 	- -> Refaire les étapes ci-dessus une nouvelle fois pour le schéma "banquetest" (Database: le nom du schéma ajouté = banquetest)
