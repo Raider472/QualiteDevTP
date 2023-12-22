@@ -1,5 +1,0 @@
-mvn clean: enléve le fichier "target" s'il y en a un
-mvn compile: compile toutes les classes java dans un fichier "target"
-mvn test: execute les test unitaires
-mvn package: inclus le "compile" et "test" et convertis le projet en .jar ou .war
-mvn install: comme package et l'inclus dans le fichier locale maven
