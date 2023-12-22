@@ -1,9 +1,5 @@
 package com.iut.banque.controller;
 
-import org.apache.struts2.ServletActionContext;
-import org.springframework.context.ApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 import com.iut.banque.exceptions.IllegalFormatException;
@@ -12,6 +8,15 @@ import com.iut.banque.exceptions.TechnicalException;
 import com.iut.banque.facade.BanqueFacade;
 import com.iut.banque.modele.Client;
 import com.iut.banque.modele.Compte;
+import jakarta.inject.Inject;
+
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.EventListener;
+import java.util.Map;
+import java.util.Set;
 
 public class CreerCompte extends ActionSupport {
 
@@ -75,15 +80,13 @@ public class CreerCompte extends ActionSupport {
 	}
 
 	/**
-	 * Constructeur sans paramêtre de CreerCompte
+	 * Constructeur de CreerCompte
 	 */
-	public CreerCompte() {
+	@Inject
+	public CreerCompte(BanqueFacade banque) {
 		System.out.println("In Constructor from CreerCompte class ");
-		ApplicationContext context = WebApplicationContextUtils
-				.getRequiredWebApplicationContext(ServletActionContext.getServletContext());
-		this.banque = (BanqueFacade) context.getBean("banqueFacade");
+		this.banque = banque;
 	}
-
 	/**
 	 * @return the numeroCompte
 	 */

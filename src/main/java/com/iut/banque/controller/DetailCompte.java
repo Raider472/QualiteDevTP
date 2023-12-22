@@ -1,6 +1,8 @@
 package com.iut.banque.controller;
 
-import org.apache.struts2.ServletActionContext;
+import jakarta.inject.Inject;
+import jakarta.servlet.*;
+import jakarta.servlet.descriptor.JspConfigDescriptor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -11,6 +13,16 @@ import com.iut.banque.modele.Client;
 import com.iut.banque.modele.Compte;
 import com.iut.banque.modele.Gestionnaire;
 import com.opensymphony.xwork2.ActionSupport;
+
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.EventListener;
+import java.util.Map;
+import java.util.Set;
+
+import static org.apache.struts2.ServletActionContext.getServletContext;
 
 public class DetailCompte extends ActionSupport {
 
@@ -28,11 +40,10 @@ public class DetailCompte extends ActionSupport {
 	 * @return un nouvel objet DetailCompte avec une BanqueFacade provenant de
 	 *         la factory
 	 */
-	public DetailCompte() {
+	@Inject
+	public DetailCompte(BanqueFacade banque) {
 		System.out.println("In Constructor from DetailCompte class ");
-		ApplicationContext context = WebApplicationContextUtils
-				.getRequiredWebApplicationContext(ServletActionContext.getServletContext());
-		this.banque = (BanqueFacade) context.getBean("banqueFacade");
+		this.banque = banque;
 	}
 
 	/**

@@ -1,7 +1,16 @@
 package com.iut.banque.controller;
 
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Enumeration;
+import java.util.EventListener;
 import java.util.Map;
+import java.util.Set;
 
+import jakarta.inject.Inject;
+import jakarta.servlet.*;
+import jakarta.servlet.descriptor.JspConfigDescriptor;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -30,11 +39,10 @@ public class ListeCompteManager extends ActionSupport {
 	 * @return Un objet de type Connect avec façade BanqueFacade provenant de sa
 	 *         factory
 	 */
-	public ListeCompteManager() {
+	@Inject
+	public ListeCompteManager(BanqueFacade banque) {
 		System.out.println("In Constructor from ListeCompteManager class ");
-		ApplicationContext context = WebApplicationContextUtils
-				.getRequiredWebApplicationContext(ServletActionContext.getServletContext());
-		this.banque = (BanqueFacade) context.getBean("banqueFacade");
+		this.banque = banque;
 
 	}
 
