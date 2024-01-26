@@ -2,8 +2,6 @@ package com.iut.banque.controller;
 
 import java.util.Map;
 
-import jakarta.inject.Inject;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 import com.iut.banque.constants.LoginConstants;
@@ -11,6 +9,7 @@ import com.iut.banque.facade.BanqueFacade;
 import com.iut.banque.modele.Client;
 import com.iut.banque.modele.Compte;
 import com.iut.banque.modele.Utilisateur;
+import com.opensymphony.xwork2.inject.Inject;
 
 public class Connect extends ActionSupport {
 

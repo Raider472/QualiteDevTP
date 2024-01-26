@@ -8,7 +8,7 @@ import com.iut.banque.exceptions.TechnicalException;
 import com.iut.banque.facade.BanqueFacade;
 import com.iut.banque.modele.Client;
 import com.iut.banque.modele.Compte;
-import jakarta.inject.Inject;
+import com.opensymphony.xwork2.inject.Inject;
 
 import java.io.InputStream;
 import java.net.MalformedURLException;

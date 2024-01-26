@@ -19,8 +19,6 @@ import com.iut.banque.modele.CompteSansDecouvert;
 import com.iut.banque.modele.Gestionnaire;
 import com.iut.banque.modele.Utilisateur;
 
-import static org.hibernate.Hibernate.list;
-
 /**
  * Implémentation de IDao utilisant Hibernate.
  *

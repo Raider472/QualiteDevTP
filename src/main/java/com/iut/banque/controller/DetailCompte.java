@@ -1,11 +1,5 @@
 package com.iut.banque.controller;
 
-import jakarta.inject.Inject;
-import jakarta.servlet.*;
-import jakarta.servlet.descriptor.JspConfigDescriptor;
-import org.springframework.context.ApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-
 import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.InsufficientFundsException;
 import com.iut.banque.facade.BanqueFacade;
@@ -13,6 +7,7 @@ import com.iut.banque.modele.Client;
 import com.iut.banque.modele.Compte;
 import com.iut.banque.modele.Gestionnaire;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.inject.Inject;
 
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -21,8 +16,6 @@ import java.util.Enumeration;
 import java.util.EventListener;
 import java.util.Map;
 import java.util.Set;
-
-import static org.apache.struts2.ServletActionContext.getServletContext;
 
 public class DetailCompte extends ActionSupport {
 

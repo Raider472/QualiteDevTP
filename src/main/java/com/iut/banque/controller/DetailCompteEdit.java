@@ -4,7 +4,7 @@ import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.IllegalOperationException;
 import com.iut.banque.facade.BanqueFacade;
 import com.iut.banque.modele.CompteAvecDecouvert;
-import jakarta.inject.Inject;
+import com.opensymphony.xwork2.inject.Inject;
 
 public class DetailCompteEdit extends DetailCompte {
 
