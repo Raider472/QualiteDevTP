@@ -4,6 +4,7 @@ import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.IllegalOperationException;
 import com.iut.banque.exceptions.TechnicalException;
 import com.iut.banque.facade.BanqueFacade;
+import com.iut.banque.service.Hachage;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.io.InputStream;
@@ -15,6 +16,11 @@ import java.util.Map;
 import java.util.Set;
 
 public class CreerUtilisateur extends ActionSupport {
+
+	public static void main(String[] args) {
+
+
+	}
 
 	private static final long serialVersionUID = 1L;
 	private BanqueFacade banque;
@@ -160,7 +166,7 @@ public class CreerUtilisateur extends ActionSupport {
 	/**
 	 * Renvoie Le message à afficher si la création d'un utilisateur vient
 	 * d'être essayée.
-	 * 
+	 *
 	 * @return le message de l'action précédente
 	 */
 	public String getMessage() {
@@ -169,7 +175,7 @@ public class CreerUtilisateur extends ActionSupport {
 
 	/**
 	 * Setter du message provenant de l'action précedente.
-	 * 
+	 *
 	 * @param message
 	 */
 	public void setMessage(String message) {
@@ -179,7 +185,7 @@ public class CreerUtilisateur extends ActionSupport {
 	/**
 	 * Le result indique si l'utilisateur vient d'arriver sur la page ou a tenté
 	 * la création d'un utilisateur précedemment.
-	 * 
+	 *
 	 * @return le status de l'action précedente.
 	 */
 	public String getResult() {
@@ -188,7 +194,7 @@ public class CreerUtilisateur extends ActionSupport {
 
 	/**
 	 * Setter du result de l'action précedente
-	 * 
+	 *
 	 * @param result
 	 */
 	public void setResult(String result) {
@@ -197,15 +203,15 @@ public class CreerUtilisateur extends ActionSupport {
 
 	/**
 	 * Création d'un utilisateur.
-	 * 
+	 *
 	 * @return String : le status de l'action
 	 */
 	public String creationUtilisateur() {
 		try {
 			if (client) {
-				banque.createClient(userId, userPwd, nom, prenom, adresse, male, numClient);
+				banque.createClient(userId, Hachage.encrypt(userPwd), nom, prenom, adresse, male, numClient);
 			} else {
-				banque.createManager(userId, userPwd, nom, prenom, adresse, male);
+				banque.createManager(userId, Hachage.encrypt(userPwd), nom, prenom, adresse, male);
 			}
 			this.message = "Le nouvel utilisateur avec le user id '" + userId + "' a bien été crée.";
 			this.result = "SUCCESS";
