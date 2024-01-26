@@ -8,9 +8,15 @@ import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.IllegalOperationException;
 import com.iut.banque.exceptions.TechnicalException;
 import com.iut.banque.facade.BanqueFacade;
+import com.iut.banque.service.Hachage;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class CreerUtilisateur extends ActionSupport {
+
+	public static void main(String[] args) {
+
+
+	}
 
 	private static final long serialVersionUID = 1L;
 	private BanqueFacade banque;
@@ -201,9 +207,9 @@ public class CreerUtilisateur extends ActionSupport {
 	public String creationUtilisateur() {
 		try {
 			if (client) {
-				banque.createClient(userId, userPwd, nom, prenom, adresse, male, numClient);
+				banque.createClient(userId, Hachage.encrypt(userPwd), nom, prenom, adresse, male, numClient);
 			} else {
-				banque.createManager(userId, userPwd, nom, prenom, adresse, male);
+				banque.createManager(userId, Hachage.encrypt(userPwd), nom, prenom, adresse, male);
 			}
 			this.message = "Le nouvel utilisateur avec le user id '" + userId + "' a bien été crée.";
 			this.result = "SUCCESS";
