@@ -2,9 +2,7 @@ package com.iut.banque.controller;
 
 import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.IllegalOperationException;
-import com.iut.banque.facade.BanqueFacade;
 import com.iut.banque.modele.CompteAvecDecouvert;
-import com.opensymphony.xwork2.inject.Inject;
 
 public class DetailCompteEdit extends DetailCompte {
 
@@ -14,9 +12,8 @@ public class DetailCompteEdit extends DetailCompte {
 	/**
 	 * Constructeur sans argument de DetailCompteEdit
 	 */
-	@Inject
-	public DetailCompteEdit(BanqueFacade banque) {
-		super(banque);
+	public DetailCompteEdit() {
+		super();
 		System.out.println("======================================");
 		System.out.println("Dans le constructeur DetailCompteEdit");
 	}
@@ -38,7 +35,7 @@ public class DetailCompteEdit extends DetailCompte {
 
 	/**
 	 * Permet le changement de découvert d'un compte avec découvert.
-	 * 
+	 *
 	 * @return le status de l'action
 	 */
 	public String changementDecouvert() {

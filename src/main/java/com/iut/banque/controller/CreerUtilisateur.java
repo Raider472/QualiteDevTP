@@ -1,18 +1,14 @@
 package com.iut.banque.controller;
 
+import org.apache.struts2.ServletActionContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
 import com.iut.banque.exceptions.IllegalFormatException;
 import com.iut.banque.exceptions.IllegalOperationException;
 import com.iut.banque.exceptions.TechnicalException;
 import com.iut.banque.facade.BanqueFacade;
 import com.opensymphony.xwork2.ActionSupport;
-
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Enumeration;
-import java.util.EventListener;
-import java.util.Map;
-import java.util.Set;
 
 public class CreerUtilisateur extends ActionSupport {
 
@@ -152,15 +148,17 @@ public class CreerUtilisateur extends ActionSupport {
 	/**
 	 * Constructeur sans paramêtre de CreerUtilisateur
 	 */
-	public CreerUtilisateur(BanqueFacade banque) {
+	public CreerUtilisateur() {
 		System.out.println("In Constructor from CreerUtilisateur class ");
-		this.banque = banque;
+		ApplicationContext context = WebApplicationContextUtils
+				.getRequiredWebApplicationContext(ServletActionContext.getServletContext());
+		this.banque = (BanqueFacade) context.getBean("banqueFacade");
 	}
 
 	/**
 	 * Renvoie Le message à afficher si la création d'un utilisateur vient
 	 * d'être essayée.
-	 * 
+	 *
 	 * @return le message de l'action précédente
 	 */
 	public String getMessage() {
@@ -169,7 +167,7 @@ public class CreerUtilisateur extends ActionSupport {
 
 	/**
 	 * Setter du message provenant de l'action précedente.
-	 * 
+	 *
 	 * @param message
 	 */
 	public void setMessage(String message) {
@@ -179,7 +177,7 @@ public class CreerUtilisateur extends ActionSupport {
 	/**
 	 * Le result indique si l'utilisateur vient d'arriver sur la page ou a tenté
 	 * la création d'un utilisateur précedemment.
-	 * 
+	 *
 	 * @return le status de l'action précedente.
 	 */
 	public String getResult() {
@@ -188,7 +186,7 @@ public class CreerUtilisateur extends ActionSupport {
 
 	/**
 	 * Setter du result de l'action précedente
-	 * 
+	 *
 	 * @param result
 	 */
 	public void setResult(String result) {
@@ -197,7 +195,7 @@ public class CreerUtilisateur extends ActionSupport {
 
 	/**
 	 * Création d'un utilisateur.
-	 * 
+	 *
 	 * @return String : le status de l'action
 	 */
 	public String creationUtilisateur() {

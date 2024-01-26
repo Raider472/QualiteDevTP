@@ -26,7 +26,7 @@ import com.iut.banque.modele.Utilisateur;
 
 /**
  * Class de test pour la DAO.
- * 
+ *
  * L'annotation @Rollback n'est pas nécéssaire partout car par défaut elle est
  * true pour les méthodes de test.
  */
