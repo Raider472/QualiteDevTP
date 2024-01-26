@@ -8,13 +8,6 @@ import java.util.EventListener;
 import java.util.Map;
 import java.util.Set;
 
-import jakarta.inject.Inject;
-import jakarta.servlet.*;
-import jakarta.servlet.descriptor.JspConfigDescriptor;
-import org.apache.struts2.ServletActionContext;
-import org.springframework.context.ApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-
 import com.opensymphony.xwork2.ActionSupport;
 
 import com.iut.banque.exceptions.IllegalOperationException;
@@ -22,6 +15,7 @@ import com.iut.banque.exceptions.TechnicalException;
 import com.iut.banque.facade.BanqueFacade;
 import com.iut.banque.modele.Client;
 import com.iut.banque.modele.Compte;
+import com.opensymphony.xwork2.inject.Inject;
 
 public class ListeCompteManager extends ActionSupport {
 

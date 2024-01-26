@@ -136,7 +136,7 @@
 
 		<!-- http://mvnrepository.com/artifact/com.google.gwt/gwt-servlet -->
 		<dependency>
-			<groupId>com.google.gwt</groupId>
+			<groupId>org.gwtproject</groupId>
 			<artifactId>gwt-servlet</artifactId>
 			<version>2.10.0</version>
 		</dependency>
