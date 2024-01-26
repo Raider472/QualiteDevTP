@@ -10,7 +10,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
 public class Hachage {
-
+    public static void main(String[] args) {
+        System.out.println(encrypt("clientpass2"));
+    }
 
     public static String encrypt(String password) {
         String key = "JNAJG";
