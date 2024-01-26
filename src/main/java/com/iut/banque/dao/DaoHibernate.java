@@ -225,10 +225,10 @@ public class DaoHibernate implements IDao {
 	public Map<String, Client> getAllClients() {
 		Session session = sessionFactory.getCurrentSession();
 		@SuppressWarnings("unchecked")
-		List<Client> res = session.createQuery("FROM Client", Client.class).list();
-		Map<String, Client> ret = new HashMap<>();
-		for (Client client : res) {
-			ret.put(client.getUserId(), client);
+		List<Object> res = session.createCriteria(Client.class).list();
+		Map<String, Client> ret = new HashMap<String, Client>();
+		for (Object client : res) {
+			ret.put(((Client) client).getUserId(), (Client) client);
 		}
 		return ret;
 	}
@@ -240,10 +240,10 @@ public class DaoHibernate implements IDao {
 	public Map<String, Gestionnaire> getAllGestionnaires() {
 		Session session = sessionFactory.getCurrentSession();
 		@SuppressWarnings("unchecked")
-		List<Gestionnaire> res = session.createQuery("FROM Gestionnaire", Gestionnaire.class).list();
-		Map<String, Gestionnaire> ret = new HashMap<>();
-		for (Gestionnaire gestionnaire : res) {
-			ret.put(gestionnaire.getUserId(), gestionnaire);
+		List<Object> res = session.createCriteria(Gestionnaire.class).list();
+		Map<String, Gestionnaire> ret = new HashMap<String, Gestionnaire>();
+		for (Object gestionnaire : res) {
+			ret.put(((Gestionnaire) gestionnaire).getUserId(), (Gestionnaire) gestionnaire);
 		}
 		return ret;
 	}

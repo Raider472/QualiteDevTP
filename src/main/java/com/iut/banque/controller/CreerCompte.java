@@ -1,5 +1,9 @@
 package com.iut.banque.controller;
 
+import org.apache.struts2.ServletActionContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import com.iut.banque.exceptions.IllegalFormatException;
@@ -8,15 +12,6 @@ import com.iut.banque.exceptions.TechnicalException;
 import com.iut.banque.facade.BanqueFacade;
 import com.iut.banque.modele.Client;
 import com.iut.banque.modele.Compte;
-import com.opensymphony.xwork2.inject.Inject;
-
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Enumeration;
-import java.util.EventListener;
-import java.util.Map;
-import java.util.Set;
 
 public class CreerCompte extends ActionSupport {
 
@@ -55,7 +50,7 @@ public class CreerCompte extends ActionSupport {
 
 	/**
 	 * Indique si le résultat de l'action précedente avait réussi
-	 * 
+	 *
 	 * @return le status de l'action précédente
 	 */
 	public boolean isError() {
@@ -64,7 +59,7 @@ public class CreerCompte extends ActionSupport {
 
 	/**
 	 * Setter de l'action précédente
-	 * 
+	 *
 	 * @param error
 	 */
 	public void setError(boolean error) {
@@ -80,13 +75,15 @@ public class CreerCompte extends ActionSupport {
 	}
 
 	/**
-	 * Constructeur de CreerCompte
+	 * Constructeur sans paramêtre de CreerCompte
 	 */
-	@Inject
-	public CreerCompte(BanqueFacade banque) {
+	public CreerCompte() {
 		System.out.println("In Constructor from CreerCompte class ");
-		this.banque = banque;
+		ApplicationContext context = WebApplicationContextUtils
+				.getRequiredWebApplicationContext(ServletActionContext.getServletContext());
+		this.banque = (BanqueFacade) context.getBean("banqueFacade");
 	}
+
 	/**
 	 * @return the numeroCompte
 	 */
@@ -134,7 +131,7 @@ public class CreerCompte extends ActionSupport {
 
 	/**
 	 * Getter du message résultant de l'action précédente.
-	 * 
+	 *
 	 * @return le message
 	 */
 	public String getMessage() {
@@ -143,21 +140,21 @@ public class CreerCompte extends ActionSupport {
 
 	/**
 	 * Choisi le message à enregistrer en fonction du message reçu en paramêtre.
-	 * 
+	 *
 	 * @param message
 	 *            : le message indiquant le status de l'action précédente.
 	 */
 	public void setMessage(String message) {
 		switch (message) {
-		case "NONUNIQUEID":
-			this.message = "Ce numéro de compte existe déjà !";
-			break;
-		case "INVALIDFORMAT":
-			this.message = "Ce numéro de compte n'est pas dans un format valide !";
-			break;
-		case "SUCCESS":
-			this.message = "Le compte " + compte.getNumeroCompte() + " a bien été créé.";
-			break;
+			case "NONUNIQUEID":
+				this.message = "Ce numéro de compte existe déjà !";
+				break;
+			case "INVALIDFORMAT":
+				this.message = "Ce numéro de compte n'est pas dans un format valide !";
+				break;
+			case "SUCCESS":
+				this.message = "Le compte " + compte.getNumeroCompte() + " a bien été créé.";
+				break;
 		}
 	}
 
@@ -165,7 +162,7 @@ public class CreerCompte extends ActionSupport {
 	 * Getter du status de l'action précédente. Si vrai, indique qu'une création
 	 * de compte a déjà été essayée (elle peut avoir réussi ou non). Sinon, le
 	 * client vient d'arriver sur la page.
-	 * 
+	 *
 	 * @return le status de l'action précédente
 	 */
 	public boolean isResult() {
@@ -174,7 +171,7 @@ public class CreerCompte extends ActionSupport {
 
 	/**
 	 * Setter du status de l'action précédente.
-	 * 
+	 *
 	 * @param result
 	 *            : le status
 	 */
@@ -184,7 +181,7 @@ public class CreerCompte extends ActionSupport {
 
 	/**
 	 * Action créant un compte client ou gestionnaire.
-	 * 
+	 *
 	 * @return une chaine déterminant le résultat de l'action
 	 */
 	public String creationCompte() {

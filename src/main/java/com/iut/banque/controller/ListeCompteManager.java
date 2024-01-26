@@ -1,12 +1,10 @@
 package com.iut.banque.controller;
 
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Enumeration;
-import java.util.EventListener;
 import java.util.Map;
-import java.util.Set;
+
+import org.apache.struts2.ServletActionContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -15,7 +13,6 @@ import com.iut.banque.exceptions.TechnicalException;
 import com.iut.banque.facade.BanqueFacade;
 import com.iut.banque.modele.Client;
 import com.iut.banque.modele.Compte;
-import com.opensymphony.xwork2.inject.Inject;
 
 public class ListeCompteManager extends ActionSupport {
 
@@ -29,20 +26,21 @@ public class ListeCompteManager extends ActionSupport {
 
 	/**
 	 * Constructeur de la classe Connect
-	 * 
+	 *
 	 * @return Un objet de type Connect avec façade BanqueFacade provenant de sa
 	 *         factory
 	 */
-	@Inject
-	public ListeCompteManager(BanqueFacade banque) {
+	public ListeCompteManager() {
 		System.out.println("In Constructor from ListeCompteManager class ");
-		this.banque = banque;
+		ApplicationContext context = WebApplicationContextUtils
+				.getRequiredWebApplicationContext(ServletActionContext.getServletContext());
+		this.banque = (BanqueFacade) context.getBean("banqueFacade");
 
 	}
 
 	/**
 	 * Méthode qui va renvoer la liste de tous les clients sous forme de hashmap
-	 * 
+	 *
 	 * @return Map<String,Client> : la hashmap correspondant au résultat
 	 */
 	public Map<String, Client> getAllClients() {
@@ -52,7 +50,7 @@ public class ListeCompteManager extends ActionSupport {
 
 	/**
 	 * Getter pour le champ aDecouvert.
-	 * 
+	 *
 	 * @return boolean : la valeur du champ aDecouvert
 	 */
 	public boolean isaDecouvert() {
@@ -61,7 +59,7 @@ public class ListeCompteManager extends ActionSupport {
 
 	/**
 	 * Setter pour le champ aDecouvert.
-	 * 
+	 *
 	 * @param aDecouvert
 	 *            : la valeur de ce qu'on veut définir
 	 */
@@ -131,7 +129,7 @@ public class ListeCompteManager extends ActionSupport {
 
 	/**
 	 * Action appelée pour supprimer un utilisateur
-	 * 
+	 *
 	 * @return String, le status de l'opération
 	 */
 	public String deleteUser() {
@@ -150,7 +148,7 @@ public class ListeCompteManager extends ActionSupport {
 
 	/**
 	 * Action appelée pour supprimer un compte
-	 * 
+	 *
 	 * @return String, le status de l'opération
 	 */
 	public String deleteAccount() {
