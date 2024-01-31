@@ -23,28 +23,27 @@ import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 public class TESTLOGINETLOGOUTTest {
-  private WebDriver driver;
-  private Map<String, Object> vars;
-  JavascriptExecutor js;
-  @Before
-  public void setUp() {
-    driver = new ChromeDriver();
-    js = (JavascriptExecutor) driver;
-    vars = new HashMap<String, Object>();
-  }
-  @After
-  public void tearDown() {
-    driver.quit();
-  }
-  @Test
-  public void tESTLOGINETLOGOUT() {
-    driver.get("http://localhost:8080/_00_ASBank2018_war/");
-    driver.manage().window().setSize(new Dimension(770, 816));
-    driver.findElement(By.linkText("Page de Login")).click();
-    driver.findElement(By.id("controller_Connect_login_action_userCde")).click();
-    driver.findElement(By.id("controller_Connect_login_action_userCde")).sendKeys("client1");
-    driver.findElement(By.id("controller_Connect_login_action_userPwd")).sendKeys("clientpass1");
-    driver.findElement(By.id("controller_Connect_login_action_submit")).click();
-    driver.findElement(By.id("logout_Retour")).click();
-  }
+    private WebDriver driver;
+    private Map<String, Object> vars;
+    JavascriptExecutor js;
+    @Before
+    public void setUp() {
+        driver = new ChromeDriver();
+        js = (JavascriptExecutor) driver;
+        vars = new HashMap<String, Object>();
+    }
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
+    @Test
+    public void tESTLOGINETLOGOUT() {
+        driver.get("http://localhost:8080/_00_ASBank2018_war/");
+        driver.manage().window().setSize(new Dimension(770, 816));
+        driver.findElement(By.linkText("Page de Login")).click();
+        driver.findElement(By.id("controller_Connect_login_action_userCde")).click();
+        driver.findElement(By.id("controller_Connect_login_action_userCde")).sendKeys("client1");
+        driver.findElement(By.id("controller_Connect_login_action_userPwd")).sendKeys("clientpass1");
+        driver.findElement(By.id("controller_Connect_login_action_submit")).click();
+    }
 }
